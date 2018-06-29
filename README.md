@@ -6,15 +6,10 @@
 
 #usage
 ```golang
-    g := &geetest.Geetest{
-		CaptchaID:  "",
-		PrivateKey: "",
+    g := geetest.New("CaptchaID", "PrivateKey")
+	u := url.Values{
+		"uid":         {"test"},
+		"client_type": {"web"},
+		"ip_address":  {"127.0.0.1"},
 	}
-
-    //预请求获取gt-server状态
-    serverStatus := g.PreProcess(userID)
-    //gt-server正常，向gt-server进行二次验证
-    g.SuccessValidate(challenge, validate, seccode)
-    //t-server非正常情况下，进行failback模式验证
-    g.FailValidate(challenge, validate)
 ```
