@@ -1,8 +1,6 @@
 # geetest
 极验 (geetest) golang sdk
 
-最近用到了极验，发现没有golang的sdk，于是乎自己撸了个轮子
-
 
 ## usage ##
 ```golang
