@@ -8,10 +8,10 @@
 ```golang
 
     g := geetest.New("48a6ebac4ebc6642d68c217fca33eb4d", "4f1c085290bec5afdc54df73535fc361")
-	p := url.Values{
-		"uid":         {"test"},
-		"client_type": {"web"},
-		"ip_address":  {"127.0.0.1"},
+    p := url.Values{
+	"user_id":     {"test"},
+	"client_type": {"web"},
+	"ip_address":  {"127.0.0.1"},
     }
     
     //预请求
