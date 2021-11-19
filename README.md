@@ -1,25 +1,22 @@
 # geetest
-极验 (geetest) golang sdk
+极验 (geetest) gt4 版本
 
 
 ## usage ##
 ```golang
 
-    g := geetest.New("48a6ebac4ebc6642d68c217fca33eb4d", "4f1c085290bec5afdc54df73535fc361")
-    p := url.Values{
-	"user_id":     {"test"},
-	"client_type": {"web"},
-	"ip_address":  {"127.0.0.1"},
-    }
+    req := geetest.Req{
+		"lot_number":     lot_number,
+		"captcha_output": captcha_output,
+		"pass_token":     pass_token,
+		"gen_time":       gen_time,
+	}
+
+	client := geetest.New(captchaID, captchaKey)
+  
+    if err := client.Validate(req);err != nil {
     
-    //预请求
-    g.PreProcess(p)
-
-    //服务器正常 校验
-    g.SuccessValidate("geetest_challenge", "geetest_validate", "geetest_seccode", p)
-
-   //服务器宕机 走failback模式
-    g.FailValidate("geetest_challenge", "geetest_validate", "geetest_seccode")
+    }
 
 
 ```
